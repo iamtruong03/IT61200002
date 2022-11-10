@@ -5,6 +5,7 @@ public class Person {
 	// class 
 
 	// Object's pr
+	private static int count=0;
 	private String firstname;
 	private String lastname;
 	private byte age;
@@ -38,11 +39,13 @@ public class Person {
 		this.firstname = f;
 		this.lastname = l;
 		this.age = age;
+		
+		// tang bien dem doi tuong
+		Person.count++;
 
 	}
 	
-	// tang bien dem doi tuong
-	Person.count++;
+
 	
 
 	// Gettor methods
