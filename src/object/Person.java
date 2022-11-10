@@ -34,6 +34,7 @@ public class Person {
 	}
 
 	public Person(String f, String l, byte age) {
+		// dac biet loai 2- day du tham so
 		this.firstname = f;
 		this.lastname = l;
 		this.age = age;
@@ -41,6 +42,7 @@ public class Person {
 	}
 	
 	// tang bien dem doi tuong
+	Person.count++;
 	
 
 	// Gettor methods
@@ -61,11 +63,12 @@ public class Person {
 		return lastname + " " + firstname + " " + age;
 	}
 	
-//	public static int countPerson() {
-//		return Person.count;
-//	}
+	public static int countPerson() {
+			return Person.count;
+		}
 
 	// Settor methods
+
 	public Person setfirstname(String firstname) {
 		this.firstname = firstname;
 		return this;
@@ -99,7 +102,7 @@ public class Person {
 
 		p1.setfirstname("Truong").setlastname("Nong Minh").setage((byte) 18);
 		System.out.println(p1);
-		System.out.println("So doi tuong khoi tao");
+		System.out.println("So doi tuong khoi tao la: "+Person.countPerson());
 
 	}
 
