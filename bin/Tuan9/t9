@@ -4,3 +4,24 @@ Truy cập tham chiếu. giá trị nội tại của class
 2.5 truy cap vao thuoc tinh cua doi tuong
 (Nguyen Duc Nghia- Nguyen To Thanh)
 2.6 bien va phuong thuc thuoc lop
+
+
+
+khai báo mảng 1 chiều:
+<public|private...> <options> <int|float...>  [] <name> = new <int|float...>[size];
+<public|private...> <options> <int|float...> <name>[] = new <int|float...>[size];
+
+vd:
+- khai bao theo dang 1:
+int[] arrInt = new int[100]; // Mảng nguyên thủy
+float[] arrfloat = new float[10]; // Mang nguye thuy
+String[] arrStr = {"a", "abc", "cd", "dcb"}; // Mang doi tuong
+
+- khai bao mang loai 2:
+
+
+mảng nguyên thủy chứa trực tiếp gtri của đối tượng còn k nguyên thủy (đối tượng) chỉ chứa địa chỉ ô nhớ của đối tượng
+
+// BT Sinh ngau nhien Fashion
+// Sap xep theo tuoi cua Person
+// sap xep theo gia cua Fashion
