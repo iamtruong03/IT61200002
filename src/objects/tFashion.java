@@ -24,6 +24,8 @@ public class tFashion {
 	private COLOR fashion_color; // màu sắc bag buoc
 	private Person fashion_manager; // người quản lý
 
+	
+	// Contructor
 	public tFashion() {
 
 	}

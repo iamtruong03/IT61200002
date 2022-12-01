@@ -17,7 +17,7 @@ public class tShoes {
 	private boolean shoes_is_show;
 	private boolean shoes_is_delete;
 	private GENDER shoes_gender;
-	private TYPE shoes_typr;
+	private TYPE shoes_type;
 	private short shoes_count;
 
 	enum SIZE {

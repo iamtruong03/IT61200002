@@ -1,0 +1,18 @@
+Công ty ACBSoft cần xây dựng một hệ thống phần mềm quản lý danh mục
+và sản phẩm. Danh mục sản phẩm bao gồm đồ gỗ nội thất và gạch ốp lát. Các sản
+phẩm thuộc những danh mục trên được mô tả bởi một số thuộc tính như: mã sản
+phẩm, danh mục sản phẩm, tên sản phẩm, cơ cấu tính giá thành, nhà sản xuất, mô
+tả chi tiết khác.
+2) Yêu cầu:
+a) Xây dựng lớp đối tượng sản phẩm (Product) và danh mục sản phẩm (Category)
+(2đ)
+b) Xây dựng 4 phương thức Constructor, gồm: không có tham số, đầy đủ tham số,
+tự đề xuất tham số theo mỗi thành viên (2đ)
+c) Xây dựng phương thức để sinh ngẫu nhiên (số lượng tùy ý) các sản phẩm theo
+từng danh mục (2đ)
+d) Xây dựng phương thức (2đ): //khó
+- Sắp xếp danh sách sản phẩm theo giá, hoặc theo tên, hoặc theo nhà sản xuất
+- Tìm kiếm một sản phẩm, cập nhật, xóa một sản phẩm
+e) Xây dựng phương thức để in (2đ):
+- Danh sách sản phẩm
+- Số lượng thống kê trong từng danh mục sản phẩm

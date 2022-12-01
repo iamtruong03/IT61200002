@@ -1,6 +1,7 @@
-package objects;
+ package objects;
 
 //public class Person {
+
 //	
 //	// class 
 //
@@ -111,7 +112,6 @@ package objects;
 //
 //}
 
-
 public class Person {
 	// constanst
 
@@ -150,9 +150,9 @@ public class Person {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
-		//cách 1;
-		//this.address = address;
-		//cách 2
+		// cách 1;
+		// this.address = address;
+		// cách 2
 		this.address = new Address();
 		// tăng biến đếm đối tượng
 		Person.count++;
@@ -198,7 +198,8 @@ public class Person {
 
 	// Other methods - 5
 	public String toString() {
-		//return lastName + " " + firstName + ", " + age + ", " + this.address.toString();
+		// return lastName + " " + firstName + ", " + age + ", " +
+		// this.address.toString();
 		return lastName + " " + firstName + ", " + age;
 	}
 
@@ -214,22 +215,22 @@ public class Person {
 
 	public static void main(String[] args) {
 		// khởi tạo đối tượng
-		
+
 		Address addr = new Address("Hà Nội", "Bac Tu Liem", "Pho Nhon");
 		Person p;
 		Person p1 = new Person();
 		Person p2 = new Person((byte) 18);
 		Person p3 = new Person("Tien", (byte) 20);
-		Person p4 = new Person("Tien", "Nguyen", (byte) 23, addr );
+		Person p4 = new Person("Tien", "Nguyen", (byte) 23, addr);
 
-		 System.out.println(p1);
-		 System.out.println(p2);
-		 System.out.println(p3);
-		 System.out.println(p4);
+		System.out.println(p1);
+		System.out.println(p2);
+		System.out.println(p3);
+		System.out.println(p4);
 
 		// bổ xung thông tin vào p1
 
-		 p1.setfirstName("Tien").setlastName("Nguyen Anh").setage((byte)20);
+		p1.setfirstName("Tien").setlastName("Nguyen Anh").setage((byte) 20);
 
 		System.out.println("so doi tuong duoc tao ra la: " + Person.countPerson());
 
