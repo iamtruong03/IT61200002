@@ -76,10 +76,10 @@ public class MyArrays {
 	}
 
 	public static void main(String[] args) {
-//		// Sinh mang 
-//		int[] arrInt = MyArrays.generateArray(20);
-//		// in mang
-//		MyArrays.printArray(arrInt);
+		// Sinh mang 
+		int[] arrInt = MyArrays.generateArray(20);
+		// in mang
+		MyArrays.printArray(arrInt);
 		
 		Person[] list = MyArrays.generatePerson(8);
 		MyArrays.printPerson(list);

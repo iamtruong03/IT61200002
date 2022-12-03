@@ -175,6 +175,7 @@ public class Product extends Category {
 
 		// ramdom product
 		Product.productCeramicTiles(list, n);
+		Product.productFuntiture(list, n);
 	}
 
 }

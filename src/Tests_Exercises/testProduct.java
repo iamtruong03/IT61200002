@@ -122,6 +122,8 @@ package Tests_Exercises;
 
 import java.util.Scanner;
 
+import ACBSoft.Product;
+
 public class testProduct extends testCategory {
 	/**
 	 *
@@ -252,81 +254,81 @@ public class testProduct extends testCategory {
 	}
 
 	// sort ASC by cost
-//	public static testProduct[] sortProduct(testProduct[] list, int n) {
-//
-//		for (int i = 0; i < n - 1; i++) {
-//			for (int j = i + 1; j < n; j++) {
-//				if (list[i].productCost() > list[j].productCost()) {
-//					testProduct tmp = new testProduct();
-//					tmp = list[j];
-//					list[j] = list[i];
-//					list[i] = tmp;
-//				}
-//			}
-//		}
-//
-//		return list;
-//	}
+	public static testProduct[] sortProduct(testProduct[] list, int n) {
+
+		for (int i = 0; i < n - 1; i++) {
+			for (int j = i + 1; j < n; j++) {
+				if (list[i].productCost() > list[j].productCost()) {
+					testProduct tmp = new testProduct();
+					tmp = list[j];
+					list[j] = list[i];
+					list[i] = tmp;
+				}
+			}
+		}
+
+		return list;
+	}
 
 	// find product
-//	public static void findProduct(testProduct[] list, int product_code) {
-//		int cnt = 0;
-//		for (testProduct x : list) {
-//			if (x.productCode() == product_code) {
-//				x.toString();
-//				cnt = 1;
-//			}
-//		}
-//		if (cnt == 0) {
-//			System.out.println("Khong tim thay san pham can tim !!");
-//		}
-//
-//	}
+	public static void findProduct(testProduct[] list, int product_code) {
+		int cnt = 0;
+		for (testProduct x : list) {
+			if (x.productCode() == product_code) {
+				x.toString();
+				cnt = 1;
+			}
+		}
+		if (cnt == 0) {
+			System.out.println("Khong tim thay san pham can tim !!");
+		}
+
+	}
 
 	// update product
-//    public static testProduct[] updateProduct(testProduct[] list , int n){
-//        Scanner sc = new Scanner(System.in);
-//        System.out.println("nhap ma san pham can update: ");
-//        int productCode = sc.nextInt();
-//        int cnt = 0;
-//        for(testProduct x : list){
-//            if(x.productCode() == productCode){
-//                cnt = 1;
-//            }
-//        }
-//        if(cnt == 0) {
-//        	System.out.println("Khong tim thay san pham can update !!");
-//        }
-//        System.out.println("ma san pham can update thanh :  ");
-//        int product_code = sc.nextInt();
-//        System.out.println("nhap ten san pham can update: ");
-//        String product_name = sc.next();
-//        System.out.println("nhap gia can update caa san pham: ");
-//        int product_price = sc.nextInt();
-//        System.out.println("nhap nha san xuat moi cua san pham: ");
-//        String product_producer = sc.next();
-//        for(int i = 0; i < n; i++){
-//            if(productCode == list[i].productCode()){
-//                list[i].setProduct(product_code,product_name,product_price,product_producer);
-//            }
-//        }
-//        return list;
-//    }
+    public static testProduct[] updateProduct(testProduct[] list , int n){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("nhap ma san pham can update: ");
+        int productCode = sc.nextInt();
+        int cnt = 0;
+        for(testProduct x : list){
+            if(x.productCode() == productCode){
+                cnt = 1;
+            }
+        }
+        if(cnt == 0) {
+        	System.out.println("Khong tim thay san pham can update !!");
+        }
+        System.out.println("ma san pham can update thanh :  ");
+        int product_code = sc.nextInt();
+        System.out.println("nhap ten san pham can update: ");
+        String product_name = sc.next();
+        System.out.println("nhap gia can update caa san pham: ");
+        int product_price = sc.nextInt();
+        System.out.println("nhap nha san xuat moi cua san pham: ");
+        String product_producer = sc.next();
+        for(int i = 0; i < n; i++){
+            if(productCode == list[i].productCode()){
+                list[i].setProduct(product_code,product_name,product_price,product_producer);
+            }
+        }
+        return list;
+    }
 
 //    //erase product
-//    public static testProduct[] eraseProduct(testProduct[] list, int product_code, int n){  
-//	    	for(int i = 0; i < n; i++){
-//		            if(product_code == list[i].productCode()){
-//		                for(int j = i; j < n-1; j++) {
-//		                	list[j] = list[j+1];
-//		                }
-//		                testCategory.dotProduct();
-//		                i--;
-//		                n--;
-//		            }
-//		        }
-//        return list;
-//    }
+    public static testProduct[] eraseProduct(testProduct[] list, int product_code, int n){  
+	    	for(int i = 0; i < n; i++){
+		            if(product_code == list[i].productCode()){
+		                for(int j = i; j < n-1; j++) {
+		                	list[j] = list[j+1];
+		                }
+		                testCategory.dotProduct();
+		                i--;
+		                n--;
+		            }
+		        }
+        return list;
+    }
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -338,19 +340,20 @@ public class testProduct extends testCategory {
 
 		// ramdom product
 		testProduct.productceramicTiles(list, n);
+		testProduct.productFuntiture(list, n);
 
-//        //sort product
-//        list = testProduct.sortProduct(list,n);
-//        testProduct.printProduct(list);
-//        //update product
-//        list = testProduct.updateProduct(list,n);
-//        testProduct.printProduct(list);
-//        //erase product
-//        System.out.println("Ma san pham can xoa la : ");
-//        int tmp = sc.nextInt();
-//        list = testProduct.eraseProduct(list,tmp,n);
-//        testProduct.printProduct(list);
-//        System.out.print("So luong san pham con lai: " + testCategory.printCountProduct());
+        //sort product
+        list = testProduct.sortProduct(list,n);
+        testProduct.printProduct(list);
+        //update product
+        list = testProduct.updateProduct(list,n);
+        testProduct.printProduct(list);
+        //erase product
+        System.out.println("Ma san pham can xoa la : ");
+        int tmp = sc.nextInt();
+        list = testProduct.eraseProduct(list,tmp,n);
+        testProduct.printProduct(list);
+        System.out.print("So luong san pham con lai: " + testCategory.printCountProduct());
 
 	}
 
