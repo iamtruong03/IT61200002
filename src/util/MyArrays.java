@@ -76,7 +76,7 @@ public class MyArrays {
 	}
 
 	public static void main(String[] args) {
-//		// Sinh mang
+//		// Sinh mang 
 //		int[] arrInt = MyArrays.generateArray(20);
 //		// in mang
 //		MyArrays.printArray(arrInt);
