@@ -6,6 +6,10 @@ public abstract class GeometricObject {
 	protected boolean filledln;
 
 	// contructor
+	public GeometricObject() {
+
+	}
+
 	public GeometricObject(String colour, boolean filledln) {
 		super();
 		this.colour = colour;
@@ -23,6 +27,7 @@ public abstract class GeometricObject {
 
 	// gọi là phương thức trừu tượng
 	public abstract double findArea();
+
 	public abstract double findPerimeter();
 
 }

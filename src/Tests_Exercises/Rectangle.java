@@ -1,17 +1,17 @@
-package objects;
+package Tests_Exercises;
 
-public class Rectangle extends GeometricObject {
+public class Rectangle extends Shape {
 
 	private double width;
 	private double length;
 
 	// contructor
 	public Rectangle() {
-		
+
 	}
-	
-	public Rectangle(String colour, boolean filledln, double width, double length) {
-		super(colour, filledln);
+
+	public Rectangle(String colour, String shape_type, double width, double length) {
+		super(colour, shape_type);
 		this.width = width;
 		this.length = length;
 	}
@@ -45,11 +45,5 @@ public class Rectangle extends GeometricObject {
 		return 2 * (width + length);
 	}
 
-	// to string
-	@Override
-	public String toString() {
-		return "Rectangle [W=" + width + ", Len=" + length + ",  Area=" + this.findArea() + ", Peri="
-				+ this.findPerimeter() + "]";
-	}
-
+	// to String
 }

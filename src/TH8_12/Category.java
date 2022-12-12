@@ -1,4 +1,4 @@
-package ACBSoft;
+package TH8_12;
 
 public class Category {
 	// Constanst
@@ -19,14 +19,17 @@ public class Category {
 		this.category_name = category.category_name;
 	}
 
-	// Getter methods
+	// Getter and setter
 	public String getCategory_name() {
 		return category_name;
 	}
 
-	// Setter methods
 	public void setCategory_name(String category_name) {
 		this.category_name = category_name;
+	}
+
+	public static String getCategoryName() {
+		return CATEGORY_NAME;
 	}
 
 	// Other methods
@@ -45,5 +48,4 @@ public class Category {
 
 		return listCategoryName[index];
 	}
-
 }

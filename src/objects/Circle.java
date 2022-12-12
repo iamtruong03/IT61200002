@@ -4,7 +4,11 @@ public class Circle extends GeometricObject {
 
 	private double radius;
 
-	//
+	// contructor
+	public Circle() {
+
+	}
+
 	public Circle(String colour, boolean filledln, double radius) {
 		super(colour, filledln);
 		this.radius = radius;
@@ -22,22 +26,19 @@ public class Circle extends GeometricObject {
 	@Override
 	public double findArea() {
 		// TODO Auto-generated method stub
-		return 0;
+		return Math.PI * this.radius * this.radius;
 	}
 
 	@Override
 	public double findPerimeter() {
 		// TODO Auto-generated method stub
-		return 0;
+		return 2 * this.radius * Math.PI;
 	}
-	
+
 	//
 	@Override
 	public String toString() {
-		return "Circle [radius=" + radius + ", colour=" + colour + ", filledln=" + filledln + ", getRadius()="
-				+ getRadius() + ", findArea()=" + findArea() + ", findPerimeter()=" + findPerimeter() + ", getColour()="
-				+ getColour() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
-				+ super.toString() + "]";
+		return "Circle [R=" + radius + ", Area=" + this.findArea() + ", Peri=" + this.findPerimeter() + "]";
 	}
 
 }

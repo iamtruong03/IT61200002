@@ -3,33 +3,56 @@ package ACBSoft;
 import java.util.Scanner;
 
 public class Product extends Category {
-	// Constanst
+	// Constants
 	public static final short PRODUCT_ID = 0;
-	public static final String PRODUCT_NAME = " No product_name ";
+	public static final String PRODUCT_NAME = "Unknow";
 	public static final float PRODUCT_PRICE = 0;
-	public static final String PRODUCT_PRODUCER = " No product_prodcuer ";
-	public static final String PRODUCT_DETAIL = " No product_detal ";
+	public static final String PRODUCT_MANUFACTURER = "Unknow";
+	public static final String PRODUCT_DETAIL = "No Detail";
 
-	// Properties
-	private short product_id; // mã sản phẩm
+	// Classes' variable
+	public static short countID = 1;
+
+	// Object's properties
+	private short product_id; // Mã sản phẩm
 	private String product_name; // tên sản phẩm
-	private float product_price;// cơ cấu tính giá thành
-	private String product_producer; // nhà sản xuất
-	private String product_detail; // mô tả chi tiết khác
+	private float product_price; // Cơ cấu giá thành
+	private String product_manufacturer; // Nhà sản xuất
+	private String product_detail; // Mô tả chi tiết khác
 
-	// Constructor
+	// Constructor methods
 
-	public Product(CATEGORY category_name, short product_id, String product_name, float product_price,
-			String product_producer, String product_detail) {
-		super(category_name);
+	public Product() {
+		this((short) Product.countID, Category.CATEGORY_NAME, Product.PRODUCT_NAME, (float) Product.PRODUCT_PRICE,
+				Product.PRODUCT_MANUFACTURER, Product.PRODUCT_DETAIL);
+	}
+
+	public Product(String product_category) {
+		this(Product.countID, product_category, Product.PRODUCT_NAME, (float) Product.PRODUCT_PRICE,
+				Product.PRODUCT_MANUFACTURER, Product.PRODUCT_DETAIL);
+	}
+
+	public Product(short product_id, String product_category, String product_name, float product_price,
+			String product_manufacturer, String product_detail) {
+		super(product_category);
 		this.product_id = product_id;
 		this.product_name = product_name;
 		this.product_price = product_price;
-		this.product_producer = product_producer;
+		this.product_manufacturer = product_manufacturer;
 		this.product_detail = product_detail;
+		++Product.countID;
 	}
 
-	// getters and setters
+	public Product(Product product) {
+		this.product_id = product.product_id;
+		this.product_name = product.product_name;
+		this.product_price = product.product_price;
+		this.product_manufacturer = product.product_manufacturer;
+		this.product_detail = product.product_detail;
+	}
+
+	// Getter and Setter methods
+
 	public short getProduct_id() {
 		return product_id;
 	}
@@ -54,12 +77,12 @@ public class Product extends Category {
 		this.product_price = product_price;
 	}
 
-	public String getProduct_producer() {
-		return product_producer;
+	public String getProduct_manufacturer() {
+		return product_manufacturer;
 	}
 
-	public void setProduct_producer(String product_producer) {
-		this.product_producer = product_producer;
+	public void setProduct_manufacturer(String product_manufacturer) {
+		this.product_manufacturer = product_manufacturer;
 	}
 
 	public String getProduct_detail() {
@@ -70,112 +93,239 @@ public class Product extends Category {
 		this.product_detail = product_detail;
 	}
 
-	public static short getProductId() {
-		return PRODUCT_ID;
-	}
-
-	public static String getProductName() {
-		return PRODUCT_NAME;
-	}
-
-	public static float getProductPrice() {
-		return PRODUCT_PRICE;
-	}
-
-	public static String getProductProducer() {
-		return PRODUCT_PRODUCER;
-	}
-
-	public static String getProductDetail() {
-		return PRODUCT_DETAIL;
-	}
-
-	// other methods
+	// Other methods
 	@Override
 	public String toString() {
-		return "Product [" + super.toString() + " product_id=" + product_id + ", product_name=" + product_name
-				+ ", product_price=" + product_price + ", product_producer=" + product_producer + ", product_detail="
-				+ product_detail + "]";
+		return "Product [Ma: " + product_id + ", " + super.toString() + ", Ten san pham:" + product_name + ", Gia:"
+				+ product_price + ", Nha SX: " + product_manufacturer + ", Mo ta:" + product_detail + "]";
 	}
 
-	// c. Xây dựng phương thức để sinh ngẫu nhiên (số lượng tùy ý) các sản phẩm theo
-	// từng danh mục
+	public static Product generateWoodenProducts() {
 
-	// random Funtiture
-	public static Product[] productFuntiture(Product[] list, int n) {
+		String[] listOfNames = { "Dong Ho Hoa La Cay", " Bo Ban An Go Cao Su " };
 
-		short[] product_id = { 1, 2 };
+		String[] listOfManufacturers = { "Do Go Minh Quoc", "Do Go Son Dong" };
 
-		String[] product_name = { "Dong Ho Hoa La Cay", " Bo Ban An Go Cao Su " };
+		String[] listOfDetail = { " Khong co mo ta", " Co mo ta " };
 
-		float[] product_price = { 4500000, 3200000 };
+		Product product = new Product();
 
-		String[] product_producer = { "Do Go Minh Quoc", "Do Go Son Dong" };
+		product.setProduct_id((short) (Math.random() * 999));
 
-		String[] product_detail = { " Khong co mo ta", " Co mo ta " };
+		product.setCategory_name("Funtiture");
+
+		int index;
+
+		index = (int) (Math.random() * listOfNames.length);
+		product.setProduct_name(listOfNames[index]);
+
+		product.setProduct_price((float) (Math.random() * 999 + 1000));
+
+		index = (int) (Math.random() * listOfManufacturers.length);
+		product.setProduct_manufacturer(listOfManufacturers[index]);
+
+		index = (int) (Math.random() * listOfDetail.length);
+		product.setProduct_detail(listOfDetail[index]);
+
+		return product;
+	}
+
+	public static Product generateTilesProducts() {
+
+		String[] listOfNames = { "Gach gia go", "Gach tham trang tri" };
+
+		String[] listOfManufacturers = { "Gach op lat Dong Tam", "Viglacera Thang Long" };
+
+		String[] listOfDetail = { " Khong co mo ta", " Co mo ta " };
+
+		Product product = new Product();
+
+		product.setProduct_id((short) (Math.random() * 999));
+
+		product.setCategory_name("Ceramic Tiles");
+
+		int index;
+
+		index = (int) (Math.random() * listOfNames.length);
+		product.setProduct_name(listOfNames[index]);
+
+		product.setProduct_price((float) (Math.random() * 999 + 1000));
+
+		index = (int) (Math.random() * listOfManufacturers.length);
+		product.setProduct_manufacturer(listOfManufacturers[index]);
+
+		index = (int) (Math.random() * listOfDetail.length);
+		product.setProduct_detail(listOfDetail[index]);
+
+		return product;
+	}
+
+	public static Product[] generateProducts(int n) {
+		Product[] listOfProducts = new Product[n];
 
 		for (int i = 0; i < n; i++) {
-			int rdproduct_id = (int) (Math.random() * 2);
-			int rdproduct_name = (int) (Math.random() * 2);
-			int rdproduct_price = (int) (Math.random() * 2);
-			int rdproduct_producer = (int) (Math.random() * 2);
-			int rdproduct_detail = (int) (Math.random() * 2);
-			// Category.countProduct();
-			list[i] = new Product(Category.CATEGORY.ceramic_tiles, product_id[rdproduct_id],
-					product_name[rdproduct_name], product_price[rdproduct_price], product_producer[rdproduct_producer],
-					product_detail[rdproduct_detail]);
+			String product_categoryName = Category.generateCategoryName();
+
+			if (product_categoryName == "Furniture") {
+				listOfProducts[i] = Product.generateWoodenProducts();
+			} else {
+				listOfProducts[i] = Product.generateTilesProducts();
+			}
+
 		}
-
-		return list;
-
+		return listOfProducts;
 	}
 
-	// print product list
-	public static void printProduct(Product[] list) {
-		for (Product x : list) {
-			System.out.println(x);
+	public static void sortByPrice(Product[] product) {
+		for (int i = 0; i < product.length - 1; i++) {
+			int m = i;
+			for (int j = i + 1; j < product.length; j++) {
+				if (product[m].getProduct_price() < product[j].getProduct_price())
+					m = j;
+			}
+			if (m != i) {
+				Product temp = product[i];
+				product[i] = product[m];
+				product[m] = temp;
+			}
 		}
 	}
 
-	// random ceramic_tiles
-	public static Product[] productCeramicTiles(Product[] list, int n) {
+	public static void updateProduct(Product[] product) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Nhap ma san pham can cap nhap: ");
+		int product_id = sc.nextInt();
+		for (int i = 0; i < product.length; i++) {
+			if (product[i].getProduct_id() == product_id) {
+				sc.nextLine();
+				System.out.print("Nhap ten danh mục: ");
+				product[i].setCategory_name(sc.nextLine());
 
-		short[] product_id = { 1, 2 };
+				System.out.print("Nhap ten san pham: ");
+				product[i].setProduct_name(sc.nextLine());
 
-		String[] product_name = { "Gach Lat Nen ", "Gach Gia Go" };
+				System.out.print("Nhap ten gia: ");
+				product[i].setProduct_price(sc.nextFloat());
 
-		float[] product_price = { 350000, 380000 };
+				sc.nextLine();
+				System.out.print("Nhap ten nha san xuat: ");
+				product[i].setProduct_manufacturer(sc.nextLine());
 
-		String[] product_producer = { "Gach Dong Tam", "Gach Royal" };
-
-		String[] product_detail = { " Khong co mo ta", " Co mo ta " };
-
-		for (int i = 0; i < n; i++) {
-			int rdproduct_id = (int) (Math.random() * 2);
-			int rdproduct_name = (int) (Math.random() * 2);
-			int rdproduct_price = (int) (Math.random() * 2);
-			int rdproduct_producer = (int) (Math.random() * 2);
-			int rdproduct_detail = (int) (Math.random() * 2);
-//			Category.countProduct();
-			list[i] = new Product(Category.CATEGORY.ceramic_tiles, product_id[rdproduct_id],
-					product_name[rdproduct_name], product_price[rdproduct_price], product_producer[rdproduct_producer],
-					product_detail[rdproduct_detail]);
+				System.out.print("Nhap mo ta chi tiet: ");
+				product[i].setProduct_detail(sc.nextLine());
+			}
 		}
+	}
 
-		return list;
+	public static void searchProduct(Product[] product) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Nhap ten san pham can tim kiem: ");
+		String productName = sc.nextLine();
+
+		System.out.printf("%-15s %-20s %-30s %-15s %-30s %-40s\n", "Ma san pham", "Danh muc", "Ten san pham", "Gia",
+				"Nha san xuat", "Mo ta chi tiet");
+		for (int i = 0; i < product.length; i++) {
+			if (product[i].getProduct_name().compareTo(productName) == 0) {
+				System.out.println(product[i].toString());
+			}
+		}
+	}
+
+	public static Product[] deleteProduct(Product[] product) {
+
+		Product[] tempProduct = new Product[product.length - 1];
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Nhap ma san pham can xoa: ");
+		int product_id = sc.nextInt();
+
+		int newSize = 0;
+
+		for (int i = 0; i < product.length; i++) {
+
+			if (product[i].getProduct_id() == product_id) {
+				continue;
+			}
+
+			tempProduct[newSize] = new Product();
+
+			tempProduct[newSize] = product[i];
+			++newSize;
+		}
+		return tempProduct;
+	}
+
+	public static void printProduct(Product[] product) {
+
+		for (int i = 0; i < product.length; i++) {
+			System.out.println(product[i].toString());
+		}
+	}
+
+	public static void thongKe(Product[] product) {
+		int countDoGoNoiThat = 0;
+		int countGachOpLat = 0;
+		for (int i = 0; i < product.length; i++) {
+			if (product[i].getCategory_name().compareTo("Ceramic Tiles") == 0)
+				++countDoGoNoiThat;
+			else
+				++countGachOpLat;
+		}
+		System.out.println("Danh muc đo go noi that có: " + countDoGoNoiThat + " san pham.");
+		System.out.println("Danh muc gach op lat co: " + countDoGoNoiThat + " san pham.");
+	}
+
+	// MENU
+	public static void menu(Product[] product) {
+		Scanner sc = new Scanner(System.in);
+
+		while (true) {
+			int option = 0;
+			System.out.println("----------MENU-----------");
+			System.out.println("(1) - Sap xep san pham theo gia");
+			System.out.println("(2) - Tim kiem mot san pham");
+			System.out.println("(3) - Cap nhat mot san pham");
+			System.out.println("(4) - Xoa mot san pham");
+			System.out.println("(5) - In danh sach san pham");
+			System.out.println("(6) - So luong thong ke trong tung danh muc san pham");
+			System.out.println("(7) - Thoat chuong trinh.");
+			System.out.print("Nhap lua chon cua ban: ");
+			option = sc.nextInt();
+
+			switch (option) {
+			case 1:
+				Product.sortByPrice(product);
+				break;
+			case 2:
+				Product.searchProduct(product);
+				break;
+			case 3:
+				Product.updateProduct(product);
+				break;
+			case 4:
+				Product.deleteProduct(product);
+				break;
+			case 5:
+				Product.printProduct(product);
+				break;
+			case 6:
+				Product.thongKe(product);
+				break;
+			case 7:
+				return;
+			default:
+				System.out.println("Lua chon khong hop le. Vui long nhap lai!");
+			}
+		}
 	}
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+		// Sinh ngau nhien so luong san pham
+		int n = (int) ((Math.random() * 1000) % 20 + 8);
 
-		// test chức năng
-		System.out.println("So san pham can random ra la : ");
-		int n = sc.nextInt();
-		Product[] list = new Product[n];
+		// Sinh ngau nhien n san pham theo tung danh muc
+		Product[] sanPham = Product.generateProducts(n);
 
-		// ramdom product
-		Product.productCeramicTiles(list, n);
-		Product.productFuntiture(list, n);
+		Product.menu(sanPham);
 	}
-
 }
