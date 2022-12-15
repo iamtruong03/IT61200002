@@ -1,0 +1,25 @@
+4. Giao tiếp (Interface)
+- vấn đề đa thừa kế từ C++ -> giao tiếp (interface) trong java
+- với java, mọi lớp đối tượng k thể  có nhiều hơn 1 lớp cha trực tiếp nhưng có thể có cài đặt nhiều giao tiếp -> thừa hưởng thêm các thuộc tính, phương thức
+- giao tiếp dc khai báo như lớp, có các thuộc tính và các phương thức:
+	+ thuộc tính là các hàng
+	+ phương thức là phương thức trừu tượng dù k có từ khóa abstract đi kèm
+- dạng khai báo , sử dụng interface
+	public interface <tên giao tiếp> [extends <các giao tiếp khác>]
+- ví dụ:
+	public interface Product {
+		public static final String MAKER = " No crop ";
+		String PHONE = "0375388196";
+		
+	}
+	
+	lowps truu tuong co the la lop cai dat cua interface
+	interface k the la lop cai dat cua truu tuong
+
+	Interface
+		- Product (Mobile, Computer)
+		- PersonManager
+		- Statistic
+		- Search
+		
+BT: sap xep theo ten cua person, tuoi- da lam
