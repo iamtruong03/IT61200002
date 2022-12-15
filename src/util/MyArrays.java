@@ -1,7 +1,7 @@
 package util;
 
 import objects.Person;
-import objects.tFashion;
+import java.util.ArrayList; // sd mang de the hien cac thanh phan danh sach
 
 public class MyArrays {
 	/**
@@ -50,7 +50,7 @@ public class MyArrays {
 		return list;
 
 	}
-	
+
 //	public static tFashion[] generatetFashion(int n) {
 //		
 //	}
@@ -70,22 +70,82 @@ public class MyArrays {
 	}
 
 	public static void printPerson(Person[] list) {
-		for (Person p : list ) {
+		for (Person p : list) {
 			System.out.println(p);
 		}
 	}
 
+	public static void printPerson(ArrayList<Person> list) {
+		// cach 2
+//		for (Person p : list) {
+//			System.out.println(p);
+//		}
+
+		// cach 3: Lambda java 8
+		list.forEach(p -> System.out.println(p));
+
+	}
+
+	// equalsIgnoreCase la phuong thuc tim kiem chinh xac k phan biet hoa, thuong,
+	// dung so tu
+	// contains: la phuong thuc tim kiem k chinh xac, chuoi con trong chuoi me
+	public static Person[] searchPerson(Person[] list, String name) {
+		int count = 0;
+		// khai bao mang luu tru ket qua
+		Person[] results = null;
+
+		// dem so ket qua
+		for (Person p : list) {
+			if (p.getfirstName().toLowerCase().contains(name.toLowerCase())) {
+				count++;
+			}
+		}
+
+		// khoi tao bo nho
+		results = new Person[count];
+
+		// ghi nhan ket qua
+		count = 0;
+		for (Person p : list) {
+			if (p.getfirstName().toLowerCase().contains(name.toLowerCase())) {
+				results[count] = p;
+				count++;
+			}
+		}
+
+		return results;
+	}
+
+	public static ArrayList<Person> searchPersonV2(Person[] list, String name) {
+		// khai bao va khoi tao
+		ArrayList<Person> results = new ArrayList<>();
+
+		// ghi nhan ket qua
+		for (Person p : list) {
+			if (p.getfirstName().toLowerCase().contains(name.toLowerCase())) {
+				results.add(p);
+			}
+		}
+
+		return results;
+	}
+
 	public static void main(String[] args) {
-		// Sinh mang 
+		// Sinh mang
 		int[] arrInt = MyArrays.generateArray(20);
 		// in mang
 		MyArrays.printArray(arrInt);
-		
+
 		Person[] list = MyArrays.generatePerson(8);
 		MyArrays.printPerson(list);
+
+		System.out.println("----------------------------------------------");
+
+		// tim kiem
+		// Person[] results = MyArrays.searchPerson(list, "Anh");
+		ArrayList<Person> results = MyArrays.searchPersonV2(list, "Anh");
+		MyArrays.printPerson(results);
 
 	}
 
 }
-
-
