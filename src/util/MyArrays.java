@@ -2,12 +2,13 @@ package util;
 
 import objects.Person;
 import java.util.ArrayList; // sd mang de the hien cac thanh phan danh sach
+import java.util.Collections;
 
 public class MyArrays {
 	/**
 	 * Phương thức sinh ngãu nhiên giá trị cho mảng 1 chiều có n phàn tử
 	 * 
-	 * @param n - số pần tử của mảng 1 chiều
+	 * @param n - số phần tử của mảng 1 chiều
 	 * @return - kết quả là mảng 1 chiều có giá trị <100
 	 */
 	public static int[] generateArray(int n) {
@@ -130,6 +131,22 @@ public class MyArrays {
 		return results;
 	}
 
+	//
+	public static ArrayList<Person> sortedByteAge(Person[] list), boolean isINC {
+		// Khaia bao mang dong
+		ArrayList<Person> tmp = new ArrayList<>();
+
+		// sao chep du lieu vao mang ten
+		Collections.addAll(tmp, list);
+
+		// sap xep
+		if(isINC) {
+		Collections.sort(tmp);
+
+		// tra ve ket qua
+		return tmp;
+	}
+
 	public static void main(String[] args) {
 		// Sinh mang
 		int[] arrInt = MyArrays.generateArray(20);
@@ -146,6 +163,8 @@ public class MyArrays {
 		ArrayList<Person> results = MyArrays.searchPersonV2(list, "Anh");
 		MyArrays.printPerson(results);
 
+		// sap xep
+		MyArrays.printPerson(results);
 	}
 
 }

@@ -1,4 +1,4 @@
-package TH8_12;
+package TX1_version2;
 
 import java.util.Scanner;
 

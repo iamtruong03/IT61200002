@@ -1,4 +1,4 @@
- package objects;
+package objects;
 
 //public class Person {
 
@@ -112,7 +112,7 @@
 //
 //}
 
-public class Person {
+public class Person implements Comparable<Person> {
 	// constanst
 
 	public static final String FIRSTNAME = "No FirstName";
@@ -234,6 +234,13 @@ public class Person {
 
 		System.out.println("so doi tuong duoc tao ra la: " + Person.countPerson());
 
+	}
+
+	// person o(can dc so sanh) ton tai truoc, this: dc so sanh
+	@Override
+	public int compareTo(Person o) {
+		// TODO Auto-generated method stub
+		return this.age - o.getage();
 	}
 }
 //Biến và phương thức kiểu này không thuộc về 1 dối tượng cụ thể nào -> thuộc về lớp.

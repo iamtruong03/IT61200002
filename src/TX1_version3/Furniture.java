@@ -1,4 +1,4 @@
-package Th14_12;
+package TX1_version3;
 
 public class Furniture extends Product {
 
