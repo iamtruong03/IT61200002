@@ -131,8 +131,8 @@ public class MyArrays {
 		return results;
 	}
 
-	//
-	public static ArrayList<Person> sortedByteAge(Person[] list), boolean isINC {
+	// sap xep tuoi
+	public static ArrayList<Person> sortedByAge(Person[] list, boolean isINC) {
 		// Khaia bao mang dong
 		ArrayList<Person> tmp = new ArrayList<>();
 
@@ -140,9 +140,20 @@ public class MyArrays {
 		Collections.addAll(tmp, list);
 
 		// sap xep
-		if(isINC) {
-		Collections.sort(tmp);
+		if (isINC) {
+			Collections.sort(tmp);
+		} else {
+			Collections.sort(tmp, Collections.reverseOrder());
+		}
 
+		// tra ve ket qua
+		return tmp;
+	}
+
+	// sap xep ten
+	public static ArrayList<Person> sortedByName(Person[] list) {
+		// Khaia bao mang dong
+		ArrayList<Person> tmp = new ArrayList<>();
 		// tra ve ket qua
 		return tmp;
 	}
@@ -160,10 +171,10 @@ public class MyArrays {
 
 		// tim kiem
 		// Person[] results = MyArrays.searchPerson(list, "Anh");
-		ArrayList<Person> results = MyArrays.searchPersonV2(list, "Anh");
-		MyArrays.printPerson(results);
+		// ArrayList<Person> results = MyArrays.searchPersonV2(list, "Anh");
 
 		// sap xep
+		ArrayList<Person> results = MyArrays.sortedByAge(list, false);
 		MyArrays.printPerson(results);
 	}
 
