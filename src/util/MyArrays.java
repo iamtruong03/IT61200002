@@ -154,6 +154,12 @@ public class MyArrays {
 	public static ArrayList<Person> sortedByName(Person[] list) {
 		// Khaia bao mang dong
 		ArrayList<Person> tmp = new ArrayList<>();
+
+		// sao chep du lieu vao mang ten
+		Collections.addAll(tmp, list);
+		
+		// sap xep
+		
 		// tra ve ket qua
 		return tmp;
 	}
