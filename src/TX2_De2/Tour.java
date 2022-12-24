@@ -1,8 +1,15 @@
 package TX2_De2;
 
-import java.util.ArrayList;
+import java.util.Scanner;
 
-public class Tour extends Product {
+public class Tour extends Product implements Comparable<Tour> {
+	Scanner sc = new Scanner(System.in);
+	// constants
+	public static final String TOUR_ATTRACTION = "NO TOUR ATTRACTION ";
+	public static final String TOUR_TIME = "NO TOUR TIME";
+	public static final String TOUR_HOTELS = "NO TOUR HOTELS";
+
+	//
 	private String tour_attraction; // địa điểm du lịch
 	private String tour_time; // độ dài chuyến du lịch
 	private String tour_hotels; // khách sạn du lịch
@@ -10,6 +17,11 @@ public class Tour extends Product {
 	// contructor
 
 	public Tour() {
+
+	}
+
+	public Tour(String product_id) {
+		super(product_id);
 
 	}
 
@@ -49,43 +61,24 @@ public class Tour extends Product {
 	// toString
 	@Override
 	public String toString() {
-		return "Tour [tour_attraction=" + tour_attraction + ", tour_time=" + tour_time + ", tour_hotels=" + tour_hotels
-				+ "]";
+		return "Tour [" + super.toString() + ", Dia diem du lich=" + tour_attraction + ", Do dai tour=" + tour_time
+				+ ", Khach san du lich=" + tour_hotels + "]";
 	}
 
-	// list
-	ArrayList<Tour> list;
+	// main
+	public static void main(String[] args) {
+		Tour tour1 = new Tour("CB1", "Tour Cat Ba", 1200, (short) 13, "Dao Cat Ba", "3 ngay 2 dem", "Cat Ba Hotel");
+		System.out.println(tour1.toString());
+	}
 
 	//
-//	public static void printArray(ArrayList<Tour t>);
-
-	// Them
-	public boolean addTour(Tour t) {
-		System.out.println("Vui long nhap san pham: ");
-
-		return true;
+	public int compareTo(Tour o) {
+		if (this.getProduct_price() > o.getProduct_price()) {
+			return 1;
+		} else if (this.getProduct_price() < o.getProduct_price()) {
+			return -1;
+		} else {
+			return 0;
+		}
 	}
-
-	// Sua
-	public boolean editTour(Tour t) {
-
-		return true;
-	}
-
-	// Xoa
-	public boolean delTour(short product_id) {
-
-		return true;
-
-	}
-	
-	// Tim kiem
-	public List<Tour> searchTour(String name);
-
-	// Sap xep theo gia
-	public double compareTo(Tour o) {
-		// TODO Auto-generated method stub
-		return this.product_price - o.getProduct_price();
-	}
-
 }

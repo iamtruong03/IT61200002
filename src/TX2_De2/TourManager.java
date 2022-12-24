@@ -1,12 +1,9 @@
 package TX2_De2;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Scanner;
+import java.util.List;
 
 public interface TourManager {
-
-	// Them
+	// Thêm
 	public boolean addTour(Tour t);
 
 	// Sua
@@ -15,34 +12,9 @@ public interface TourManager {
 	// Xoa
 	public boolean delTour(Tour t);
 
-	// Tim kiem theo ten
-//	public List<Tour> searchTour(String name);
-	public static ArrayList<Tour> searchTour(Tour[] list, String name) {
-		// khai bao va khoi tao
-		ArrayList<Tour> results = new ArrayList<>();
+	// Tìm kiếm sản phẩm theo tên:
+	public List<Tour> searchTour(String name);
 
-		// ghi nhan ket qua
-		for (Tour t : list) {
-			if (t.getProduct_name().toLowerCase().contains(name.toLowerCase())) {
-				results.add(t);
-			}
-		}
-
-		return results;
-	}
-
-	// Sap xep thep gia
-//	public List<Tour> sortedTour(double price);
-	public static ArrayList<Tour> sortedTour(Tour[] list, double price) {
-		// Khaia bao mang dong
-		ArrayList<Tour> tmp = new ArrayList<>();
-
-		// sao chep du lieu vao mang ten
-		Collections.addAll(tmp, list);
-
-		// sap xep
-
-		return tmp;
-	}
-
+	// Sắp xếp tăng dần chi phí của hành trình:
+	public List<Tour> sortedTour();
 }
