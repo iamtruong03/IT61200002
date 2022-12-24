@@ -101,7 +101,7 @@ public class TourList implements TourManager {
 		Tour tour5 = new Tour("55", "Tour Cao Bằng", 990, (short) 8, "Cao Nang", "1 ngày 1 đêm", "Cao Nang Hotel");
 		Tour tour6 = new Tour("66", "Tour Mộc Châu", 2500, (short) 15, "Moc Chau", "2 ngày 2 đêm", "Moc Chau Hotel");
 		Tour tour7 = new Tour("66", "Tour Sam Son", 1500, (short) 15, "Thanh Hoa", "2 ngày 2 đêm", "Muong Thanh Hotel");
-		System.out.println("---------------------------- THÊM TOUR TRONG DANH SÁCH ----------------------------");
+		System.out.println("---------------------------- THEM TOUR TRONG DANH SACH ----------------------------");
 		tour_list.addTour(tour1);
 		tour_list.addTour(tour2);
 		tour_list.addTour(tour3);
@@ -111,10 +111,10 @@ public class TourList implements TourManager {
 		tour_list.addTour(tour7); // Không được add vào danh sách vì có id trùng với tour6
 
 		// Xuất danh sách:
-		System.out.println("Danh sách ban đầu là: ");
+		System.out.println("Danh sach ban đau la: ");
 		tour_list.printList();
 
-		System.out.println("\n---------------------------- SỬA TOUR TRONG DANH SÁCH ----------------------------");
+		System.out.println("\n---------------------------- SUA TOUR TRONG DANH SACH ----------------------------");
 		Tour tour1_edit = new Tour("11", "Tour vịnh Hạ Long", 2000, (short) 15, "Ha Long", "2 ngày 1 đêm",
 				"Ha Long Hotel");
 		Tour tour2_edit = new Tour("10", "Tour phố Cổ Hội An", 2300, (short) 20, "Hoi An", "1 ngày 1 đêm",
@@ -122,46 +122,46 @@ public class TourList implements TourManager {
 		// Sửa tour 1:
 		System.out.println("Tiến hành sửa Tour 1: ");
 		if (tour_list.editTour(tour1_edit)) {
-			System.out.println("Sửa thành công sản phẩm có mã là " + tour1_edit.getProduct_id());
-			System.out.println("Danh sách tour sau khi sửa là: ");
+			System.out.println("Sua thanh cong san pham co ma la " + tour1_edit.getProduct_id());
+			System.out.println("Danh sach tour sau khi sua là: ");
 			tour_list.printList();
 		} else {
-			System.err.println("Sửa không thành công do mã không tồn tại hoặc đã bị xóa!");
+			System.err.println("Sua khong thanh cong do ma khong ton tai hoac đa bi xoa!");
 		}
 		// Sửa tour 2:
-		System.out.println("Tiến hành sửa Tour 2: ");
+		System.out.println("Tien hanh sua Tour 2: ");
 		if (tour_list.editTour(tour2_edit)) {
-			System.out.println("Sửa thành công sản phẩm có mã là " + tour2_edit.getProduct_id());
-			System.out.println("Danh sách tour sau khi sửa là: ");
+			System.out.println("Sua thanh cong san pham co ma la " + tour2_edit.getProduct_id());
+			System.out.println("Danh sach tour sau khi sua la: ");
 			tour_list.printList();
 		} else {
-			System.out.println("Sửa không thành công do mã không tồn tại hoặc đã bị xóa!");
+			System.out.println("Sua khong thanh cong do ma khong ton tai hoac da bi xoa!");
 		}
 
-		System.out.println("\n------------------------------ XÓA TOUR TRONG DANH SÁCH ------------------------------");
-		System.out.println("Nhập mã sản phẩm cần xóa: ");
+		System.out.println("\n------------------------------ XOA TOUR TRONG DANH SACH ------------------------------");
+		System.out.println("Nhap ma san pham can xoa: ");
 		String id = new Scanner(System.in).nextLine();
 		Tour tour_del = new Tour(id);
-		System.out.println("Tiến hành xóa tour theo mã là " + tour_del.getProduct_id());
+		System.out.println("Tien hanh xoa tour theo ma la " + tour_del.getProduct_id());
 		if (tour_list.delTour(tour_del)) {
-			System.out.println("Xóa sản phẩm thành công.");
-			System.out.println("Danh sách sau khi xóa là: ");
+			System.out.println("Xoa san pham thanh cong.");
+			System.out.println("Danh sach sau khi xoa la: ");
 			tour_list.printList();
 		} else {
-			System.out.println("Không thể xóa sản phẩm do mã không tồn tại!");
+			System.out.println("Khong the xoa san pham do ma khong ton tai!");
 		}
 
-		System.out.println("\n------------------------------ TÌM TOUR TRONG DANH SÁCH ------------------------------");
-		System.out.println("Nhập tên tour cần tìm: ");
+		System.out.println("\n------------------------------ TIM TOUR TRONG DANH SACH ------------------------------");
+		System.out.println("Nhap ten tour can tim: ");
 		String name = new Scanner(System.in).nextLine();
 		List<Tour> results = tour_list.searchTour(name);
-		System.out.println("Tiến hành tìm những Tour có tên là \"" + name + "\"");
+		System.out.println("Tien hanh tim nhung Tour co ten la \"" + name + "\"");
 		for (Tour x : results) {
 			System.out.println(x);
 		}
 
-		System.out.println("\n---------------------------- SẮP XẾP TOUR TRONG DANH SÁCH ----------------------------");
-		System.out.println("Sắp xếp danh sách tăng dần theo giá: ");
+		System.out.println("\n---------------------------- SAP XEP TOUR TRONG DANH SACH ----------------------------");
+		System.out.println("Sap xep danh sach tang dan theo gia: ");
 		tour_list.sortedTour();
 		tour_list.printList();
 	}
