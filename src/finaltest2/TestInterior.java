@@ -28,6 +28,7 @@ public class TestInterior {
 		list.forEach(item -> System.out.println(item));
 		
 		// xuat tong gia
+		System.out.println();
 		
 	}
 

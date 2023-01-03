@@ -18,26 +18,46 @@ public class InteriorManagerTmpl implements InteriorManager {
 	@Override
 	public boolean addInterior(Product p) {
 		// TODO Auto-generated method stub
-
 		try {
 			if (this.list.containsKey(p.getProduct_id())) {
 				Product temp = this.list.get(p.getProduct_id());
-
-				int new_Total = temp.getProduct_total() + p.getProduct_total();
-
-				temp.setProduct_total(new_Total);
-
+				int new_total = temp.getProduct_total() + p.getProduct_total();
+				temp.setProduct_total(new_total);
 				this.list.replace(p.getProduct_id(), temp);
-
 			} else {
 				this.list.put(p.getProduct_id(), p);
 			}
 			return true;
 		} catch (Exception e) {
+			// TODO: handle exception
 			e.printStackTrace();
 		}
 		return false;
 	}
+
+//	@Override
+//	public boolean addInterior(Product p) {
+//		// TODO Auto-generated method stub
+//
+//		try {
+//			if (this.list.containsKey(p.getProduct_id())) {
+//				Product temp = this.list.get(p.getProduct_id());
+//
+//				int new_Total = temp.getProduct_total() + p.getProduct_total();
+//
+//				temp.setProduct_total(new_Total);
+//
+//				this.list.replace(p.getProduct_id(), temp);
+//
+//			} else {
+//				this.list.put(p.getProduct_id(), p);
+//			}
+//			return true;
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		return false;
+//	}
 
 	@Override
 	public boolean editInterior(Product p) {
