@@ -1,4 +1,4 @@
-package OOP_English_Final;
+package OOP_Eng_Final_Ver1;
 
 public abstract class TwoDShape {
 	public String colour;
@@ -35,7 +35,7 @@ public abstract class TwoDShape {
 	//
 	@Override
 	public String toString() {
-		return "TwoDShape [colour=" + colour + ", shapeName=" + shapeName + "]";
+		return "TwoDShape [colour: " + colour + ", shapeName: " + shapeName + "]";
 	}
 
 }

@@ -1,4 +1,4 @@
-package OOP_English_Final;
+package OOP_Eng_Final_Ver1;
 
 public class Square extends TwoDShape implements Shape {
 
@@ -26,7 +26,7 @@ public class Square extends TwoDShape implements Shape {
 	// 
 	@Override
 	public String toString() {
-		return "Square [length=" + length + "]";
+		return "Square [" + super.toString() + ",length=" + length + "]";
 	}
 
 	//
