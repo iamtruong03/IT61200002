@@ -76,7 +76,13 @@ public class Triangle extends TwoDShape implements Shape {
 
 	public double compareTo(Triangle o) {
 		// TODO Auto-generated method stub
-		return this.getArea() - o.getArea();
+		if (this.getArea() > o.getArea()) {
+			return 1;
+		} else if (this.getArea() < o.getArea()) {
+			return -1;
+		} else {
+			return 0;
+		}
 	}
 
 }
