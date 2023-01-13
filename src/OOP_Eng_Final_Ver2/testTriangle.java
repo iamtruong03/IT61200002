@@ -36,4 +36,4 @@ public class testTriangle implements TriangleManager {
 
 	}
 
-}
+} 
